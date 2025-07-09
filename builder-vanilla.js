@@ -71,9 +71,15 @@
     // Create the form using the builder
     const formBuilder = new OhmsLawFormBuilder();
     const form = formBuilder
-        .addInput("Current (I)", "number", "current")
-        .addInput("Resistance (R)", "number", "resistance")
-        .addOutput("Voltage (V)", "number", "voltage")
+        .addFormula(
+            formBuilder.addOutput("Voltage (V)", "number", "voltage")
+            formBuilder.addOperation(MULTIPLY, 
+            [            
+                formBuilder.addInput("Current (I)", "number", "current"),
+                formBuilder.addInput("Resistance (R)", "number", "resistance")
+            ])
+        )
+        
         .onSubmit(e => {
           event.preventDefault();
           const voltage = parseFloat(event.target.voltage.value);
