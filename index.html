@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ohm's Law Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="formContainer"></div>
+
+<script>
+
+    class OhmsLawFormBuilder {
+        #formElements;
+        #formulas;
+        constructor() {
+            this.#formElements = [];
+            this.#formulas = [];
+        }
+
+        addInput(label, type, name) {
+            return { type: 'input', label, attributes: { type, name } };
+        }
+
+        addOutput(label, type, name) {
+            return { type: 'output', label, attributes: { type, name } };
+        }
+
+        multiply(...inputElements) {
+            return { operation: 'multiply', inputElements };
+        }
+
+        addFormula(output, formula) {
+            this.#formulas.push({ output, formula });
+            return this; // allows chaining
+        }
+
+        render(domElementID) {
+            this.#formElements = this.#formulas.map(({formula, output}) => {
+                const form = document.createElement('form');
+
+                form.addEventListener("input", function() {
+                    document.getElementById("answer").innerHTML = "";
+
+                    const formData = new FormData(form);
+                    const answer = formula.inputElements.reduce((p, c) => {
+                        const value = Number(formData.get(c.attributes.name));
+                        console.log(`${c.attributes.name} ${value}`)
+                        return p * value;
+                    }, output.attributes.type == "number" ? 1 : "");
+
+                    const mathML = document.createElementNS("http://www.w3.org/1998/Math/MathML", "math");
+
+                    const mrow = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mrow");
+                    const miV = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mi");
+                    miV.textContent = "V";
+                    const moEqual = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mo");
+                    moEqual.textContent = "=";
+                    const miI = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mi");
+                    miI.textContent = "I";
+                    const moTimes = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mo");
+                    moTimes.innerHTML = "&#8290;"; // This represents multiplication
+                    const miR = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mi");
+                    miR.textContent = "R";
+
+                    mrow.appendChild(miV);
+                    mrow.appendChild(moEqual);
+                    mrow.appendChild(miI);
+                    mrow.appendChild(moTimes);
+                    mrow.appendChild(miR);
+                    mathML.appendChild(mrow);
+
+                    document.getElementById("answer").appendChild(mathML);//`${output.label} = ${answer}`;
+                });
+
+                formula.inputElements.forEach(inputElement => {
+                    const formGroup = document.createElement('div');
+                    // formGroup.className = 'form-group';
+
+                    const label = document.createElement('label');
+                    label.textContent = inputElement.label;
+                    label.htmlFor = inputElement.attributes.name;
+
+                    const input = document.createElement('input');
+                    input.type = inputElement.attributes.type;
+                    input.name = inputElement.attributes.name;
+                    input.id = inputElement.attributes.name;
+                    input.required = true;
+
+                    formGroup.appendChild(label);
+                    formGroup.appendChild(input);
+                    form.appendChild(formGroup);
+                });
+
+                const formGroup = document.createElement('div');
+                // formGroup.className = 'form-group';
+
+                // const label = document.createElement('label');
+                // label.textContent = inputElement.attributes.label;
+                // label.htmlFor = inputElement.attributes.name;
+
+                const p = document.createElement('p');
+                p.id = "answer";
+
+                formGroup.appendChild(p);
+                form.appendChild(formGroup);
+
+                return form;
+            });
+
+            this.#formElements.forEach(form => {
+                document.getElementById(domElementID).appendChild(form);
+            });
+        }
+    }
+
+    // Example usage
+    const formBuilder = new OhmsLawFormBuilder();
+
+    const ohmsLaw = formBuilder
+        .addFormula(
+            formBuilder.addOutput("Voltage (V)", "number", "voltage"),
+            formBuilder.multiply(
+                formBuilder.addInput("Current (I)", "number", "current"),
+                formBuilder.addInput("Resistance (R)", "number", "resistance")
+            )
+    );
+
+    ohmsLaw.render("formContainer");
+
+
+
+
+    //     addSubmitButton() {
+    //         const submitButton = document.createElement('button');
+    //         submitButton.type = 'submit';
+    //         submitButton.textContent = "Calculate";
+    //         this.form.appendChild(submitButton);
+
+    //         return this; // Enable method chaining
+    //     }
+
+    //     build() {
+    //         return this.form;
+    //     }
+    // }
+
+    // // Create the form using the builder
+    // const ohmsLaw = new OhmsLawFormBuilder()
+    //     .addFormula(
+    //         formBuilder.addOutput("Voltage (V)", "number", "voltage"),
+    //         formBuilder.multiply(            
+    //             formBuilder.addInput("Current (I)", "number", "current"),
+    //             formBuilder.addInput("Resistance (R)", "number", "resistance")
+    //         )
+    //     );
+
+    //     ohmsLaw.generateHTMLForm();
+
+        
+        // .onSubmit(e => {
+        //   event.preventDefault();
+        //   const voltage = parseFloat(event.target.voltage.value);
+        //   const current = parseFloat(event.target.current.value);
+        //   const resistance = parseFloat(event.target.resistance.value);
+
+        //   // Simple validation and calculation
+        //   if (isNaN(voltage) && !isNaN(current) && !isNaN(resistance)) {
+        //       const calculatedVoltage = current * resistance;
+        //       alert(`Calculated Voltage: ${calculatedVoltage} V`);
+        //   } else if (isNaN(current) && !isNaN(voltage) && !isNaN(resistance)) {
+        //       const calculatedCurrent = voltage / resistance;
+        //       alert(`Calculated Current: ${calculatedCurrent} A`);
+        //   } else if (isNaN(resistance) && !isNaN(voltage) && !isNaN(current)) {
+        //       const calculatedResistance = voltage / current;
+        //       alert(`Calculated Resistance: ${calculatedResistance} Ω`);
+        //   } else {
+        //       alert('Please provide exactly two values to calculate the third.');
+        //   }
+        // })
+        // .build();
+
+    // Append the form to the container
+    
+</script>
+
+</body>
+</html>
