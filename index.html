@@ -61,29 +61,113 @@
                     }, output.attributes.type == "number" ? 1 : "");
 
                     const mathML = document.createElementNS("http://www.w3.org/1998/Math/MathML", "math");
-                    const mrow = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mrow");
+                    // <math display="block">
 
-                    const miV = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mi");
-                    miV.textContent = output.label;
-                    mrow.appendChild(miV);
+                    const semantics = document.createElementNS("http://www.w3.org/1998/Math/MathML", "semantics");
+                    const mtable = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mtable");
 
-                    const moEqual = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mo");
-                    moEqual.textContent = "=";
-                    mrow.appendChild(moEqual);
+                    {
+                        const mtr = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mtr");
 
-                    formula.inputElements.forEach((inputElement, index, array) => {
-                        const id = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mi");
-                        id.textContent = inputElement.label;
-                        mrow.appendChild(id);
+                        {
+                            const mtd = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mtd");
+                            const mrow = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mrow");
 
-                        if (index < array.length - 1) {
-                            const moTimes = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mo");
-                            moTimes.innerHTML = "&times;"; // This represents multiplication
-                            mrow.appendChild(moTimes);
+                            const miV = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mi");
+                            miV.textContent = output.label;
+                            mrow.appendChild(miV);
+
+                            mtd.appendChild(mrow);
+                            mtr.appendChild(mtd);
+                            mtable.appendChild(mtr);
                         }
-                    });
-                    
-                    mathML.appendChild(mrow);
+
+                        {
+                            const mtd = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mtd");
+                            const mrow = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mrow");
+
+                            const moEqual = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mo");
+                            moEqual.textContent = "=";
+                            mrow.appendChild(moEqual);
+
+                            mtd.appendChild(mrow);
+                            mtr.appendChild(mtd);
+                            mtable.appendChild(mtr);
+                        }
+
+                        {
+                            const mtd = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mtd");
+                            const mrow = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mrow");
+
+                            formula.inputElements.forEach((inputElement, index, array) => {
+                                const id = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mi");
+                                id.textContent = inputElement.label;
+                                mrow.appendChild(id);
+
+                                if (index < array.length - 1) {
+                                    const moTimes = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mo");
+                                    moTimes.innerHTML = "&times;"; // This represents multiplication
+                                    mrow.appendChild(moTimes);
+                                }
+                            });
+                            mtd.appendChild(mrow);
+                            mtr.appendChild(mtd);
+                            mtable.appendChild(mtr);
+                        }
+                    }
+
+                    {
+                        const mtr = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mtr");
+
+                        {
+                            const mtd = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mtd");
+                            const mrow = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mrow");
+
+                            const miV = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mi");
+                            miV.textContent = answer;
+                            mrow.appendChild(miV);
+
+                            mtd.appendChild(mrow);
+                            mtr.appendChild(mtd);
+                            mtable.appendChild(mtr);
+                        }
+
+                        {
+                            const mtd = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mtd");
+                            const mrow = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mrow");
+
+                            const moEqual = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mo");
+                            moEqual.textContent = "=";
+                            mrow.appendChild(moEqual);
+
+                            mtd.appendChild(mrow);
+                            mtr.appendChild(mtd);
+                            mtable.appendChild(mtr);
+                        }
+
+                        {
+                            const mtd = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mtd");
+                            const mrow = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mrow");
+
+                            formula.inputElements.forEach((inputElement, index, array) => {
+                                const id = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mi");
+                                id.textContent = formData.get(inputElement.attributes.name);
+                                mrow.appendChild(id);
+
+                                if (index < array.length - 1) {
+                                    const moTimes = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mo");
+                                    moTimes.innerHTML = "&times;"; // This represents multiplication
+                                    mrow.appendChild(moTimes);
+                                }
+                            });
+                            mtd.appendChild(mrow);
+                            mtr.appendChild(mtd);
+                            mtable.appendChild(mtr);
+                        }
+                    }
+
+                    semantics.appendChild(mtable);
+                    mathML.appendChild(semantics);
 
                     document.getElementById("answer").appendChild(mathML);//`${output.label} = ${answer}`;
                 });
