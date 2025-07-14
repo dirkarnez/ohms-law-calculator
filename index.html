@@ -61,24 +61,28 @@
                     }, output.attributes.type == "number" ? 1 : "");
 
                     const mathML = document.createElementNS("http://www.w3.org/1998/Math/MathML", "math");
-
                     const mrow = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mrow");
+
                     const miV = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mi");
-                    miV.textContent = "V";
+                    miV.textContent = output.label;
+                    mrow.appendChild(miV);
+
                     const moEqual = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mo");
                     moEqual.textContent = "=";
-                    const miI = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mi");
-                    miI.textContent = "I";
-                    const moTimes = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mo");
-                    moTimes.innerHTML = "&#8290;"; // This represents multiplication
-                    const miR = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mi");
-                    miR.textContent = "R";
-
-                    mrow.appendChild(miV);
                     mrow.appendChild(moEqual);
-                    mrow.appendChild(miI);
-                    mrow.appendChild(moTimes);
-                    mrow.appendChild(miR);
+
+                    formula.inputElements.forEach((inputElement, index, array) => {
+                        const id = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mi");
+                        id.textContent = inputElement.label;
+                        mrow.appendChild(id);
+
+                        if (index < array.length - 1) {
+                            const moTimes = document.createElementNS("http://www.w3.org/1998/Math/MathML", "mo");
+                            moTimes.innerHTML = "&times;"; // This represents multiplication
+                            mrow.appendChild(moTimes);
+                        }
+                    });
+                    
                     mathML.appendChild(mrow);
 
                     document.getElementById("answer").appendChild(mathML);//`${output.label} = ${answer}`;
