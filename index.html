@@ -56,8 +56,11 @@
                     const formData = new FormData(form);
                     const answer = formula.inputElements.reduce((p, c) => {
                         const value = Number(formData.get(c.attributes.name));
-                        console.log(`${c.attributes.name} ${value}`)
-                        return p * value;
+                        if (formula.operation == "multiply") {
+                            // formula
+                            return p * value;
+                        }
+                        return p + value;
                     }, output.attributes.type == "number" ? 1 : "");
 
                     const mathML = document.createElementNS("http://www.w3.org/1998/Math/MathML", "math");
