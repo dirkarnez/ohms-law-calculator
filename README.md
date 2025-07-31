@@ -19,5 +19,9 @@
       4.92	0.000765	0.000764	0.000492
       ```
     - [Online Graph Maker · Plotly Chart Studio](https://chart-studio.plotly.com/create/#/)
+- AC Ohms Law
+    - phase
+        - [Ohms Law Calculator](https://www.rapidtables.com/calc/electric/ohms-law-calculator.html)
+            - [Ohms Law](https://www.rapidtables.com/electric/ohms-law.html)
 ### MathML
 - [Pell's equation (BigInt and MathML demo)](https://people.igalia.com/fwang/pell-bigint-mathml/)
