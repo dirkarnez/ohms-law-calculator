@@ -12,10 +12,11 @@
     - > Power (Watts) / Voltage (Volts) = Current (Amps). Then, choose a fuse with a slightly higher amperage rating than the calculated current, typically around 125%
     - > The fuse's current rating must be lower than that of the cable. This is to ensure that the fuse will fail first to prevent the cable from overheating.
 - resistor linearity
-    - ```csv
-        0	0	0	0
-        3.29	0.000512	0.000511	0.000329
-        4.92	0.000765	0.000764	0.000492
+    - Measured input voltage, Measured current (10k resistor A), Measured current (10k resistor B), supposed current by Ohms Law (i don't know why these resistor behave like they are 6.4 k)
+      ```csv
+      0	0	0	0
+      3.29	0.000512	0.000511	0.000329
+      4.92	0.000765	0.000764	0.000492
       ```
 ### MathML
 - [Pell's equation (BigInt and MathML demo)](https://people.igalia.com/fwang/pell-bigint-mathml/)
