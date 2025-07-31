@@ -11,7 +11,7 @@
 - fuse
     - > Power (Watts) / Voltage (Volts) = Current (Amps). Then, choose a fuse with a slightly higher amperage rating than the calculated current, typically around 125%
     - > The fuse's current rating must be lower than that of the cable. This is to ensure that the fuse will fail first to prevent the cable from overheating.
-- resistor linearity
+- physical resistor properties (effective resistence, linearity, etc. Just for fun)
     - Measured input voltage, Measured current (10k resistor A), Measured current (10k resistor B), supposed current by Ohms Law (i don't know why these resistor behave like they are 6.4 k)
       ```csv
       0	0	0	0
