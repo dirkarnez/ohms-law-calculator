@@ -25,5 +25,7 @@
     - phase
         - [Ohms Law Calculator](https://www.rapidtables.com/calc/electric/ohms-law-calculator.html)
             - [Ohms Law](https://www.rapidtables.com/electric/ohms-law.html)
+    - Power Factor (VAs vs Watts vs VARs)
+  
 ### MathML
 - [Pell's equation (BigInt and MathML demo)](https://people.igalia.com/fwang/pell-bigint-mathml/)
