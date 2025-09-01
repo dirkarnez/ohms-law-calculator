@@ -26,7 +26,13 @@
         - [Ohms Law Calculator](https://www.rapidtables.com/calc/electric/ohms-law-calculator.html)
             - [Ohms Law](https://www.rapidtables.com/electric/ohms-law.html)
     - Power Factor (VAs vs Watts vs VARs)
-    - bypass cap: the higher the capacitance, the less ac component go to resistor
+    - Capacitors
+        - 旁路电容 bypass
+        - 滤波电容 filter
+        - 去耦电容 decoupling
+        - the higher the capacitance, the less ac component go to resistor
+        - Tutorials
+            - [旁路电容、滤波电容和去耦电容有什么区别？](https://mp.weixin.qq.com/s/dNTULzZ8kDyBgv3e7Tl67A)
   
 ### MathML
 - [Pell's equation (BigInt and MathML demo)](https://people.igalia.com/fwang/pell-bigint-mathml/)
