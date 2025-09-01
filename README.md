@@ -33,6 +33,8 @@
         - the higher the capacitance, the less ac component go to resistor
         - Tutorials
             - [旁路电容、滤波电容和去耦电容有什么区别？](https://mp.weixin.qq.com/s/dNTULzZ8kDyBgv3e7Tl67A)
+            - [讲得太好了！电容，去耦和退耦的注意事项 - 知乎](https://zhuanlan.zhihu.com/p/578977243)
+            - [彻底搞懂：什么是耦合电容？什么是去耦电容？什么是旁路电容？什么是滤波电容？ - 德力威尔王术平 - 博客园](https://www.cnblogs.com/deliweier-wangshuping/p/16127284.html)
   
 ### MathML
 - [Pell's equation (BigInt and MathML demo)](https://people.igalia.com/fwang/pell-bigint-mathml/)
