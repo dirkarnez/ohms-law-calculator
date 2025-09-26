@@ -21,6 +21,13 @@
     - [Online Graph Maker · Plotly Chart Studio](https://chart-studio.plotly.com/create/#/)
 - Earthing
  - Current divider
+- LED
+    - ```
+        LG L29K-G2J1-24-Z	Osram	Standard LEDs - SMD Green, 570nm 12mcd, 2mA
+        LO L29K-H2L1-24-Z	Osram	Standard LEDs - SMD Orange, 606nm 14mcd, 2mA
+        LB Q39G-L2N2-35-1	Osram	Standard LEDs - SMD Blue, 470nm 45mcd, 5mA
+        LS L29K-G1H2-1-Z	Osram	Standard LEDs - SMD Super Red, 630nm 13mcd, 2mA
+      ```
 - AC Ohms Law
     - phase
         - [Ohms Law Calculator](https://www.rapidtables.com/calc/electric/ohms-law-calculator.html)
