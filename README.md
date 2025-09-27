@@ -37,6 +37,8 @@
         = (J/C) * (C/s)
         = J / s
       ```
+- transmission
+    - [輸電網路 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/%E8%BC%B8%E9%9B%BB%E7%B6%B2%E8%B7%AF)
 - Power consumption
     - [空调开一晚到底需要多少钱？#冷知识 #涨知识 - YouTube](https://www.youtube.com/watch?v=CWR74hei4W8)
     - [機電工程署 - 電力教室](https://eld.emsd.gov.hk/eic/tc/electricity-classroom/classroom08.html)
