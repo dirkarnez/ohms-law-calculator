@@ -28,6 +28,15 @@
         LB Q39G-L2N2-35-1	Osram	Standard LEDs - SMD Blue, 470nm 45mcd, 5mA
         LS L29K-G1H2-1-Z	Osram	Standard LEDs - SMD Super Red, 630nm 13mcd, 2mA
       ```
+- Power
+    - power = 1 J/s
+    - volt = joules per coulomb
+    - current = coulomb per second
+    - ```
+      P = V * I
+        = (J/C) * (C/s)
+        = J / s
+      ```
 - AC Ohms Law
     - phase
         - [Ohms Law Calculator](https://www.rapidtables.com/calc/electric/ohms-law-calculator.html)
