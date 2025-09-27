@@ -37,6 +37,9 @@
         = (J/C) * (C/s)
         = J / s
       ```
+- Power consumption
+    - [空调开一晚到底需要多少钱？#冷知识 #涨知识 - YouTube](https://www.youtube.com/watch?v=CWR74hei4W8)
+    - [機電工程署 - 電力教室](https://eld.emsd.gov.hk/eic/tc/electricity-classroom/classroom08.html)
 - AC Ohms Law
     - phase
         - [Ohms Law Calculator](https://www.rapidtables.com/calc/electric/ohms-law-calculator.html)
