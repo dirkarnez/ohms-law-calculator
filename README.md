@@ -37,6 +37,7 @@
         = (J/C) * (C/s)
         = J / s
       ```
+    - Switch-mode
 - transmission
     - [輸電網路 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/%E8%BC%B8%E9%9B%BB%E7%B6%B2%E8%B7%AF)
 - Power consumption
@@ -56,6 +57,7 @@
             - [旁路电容、滤波电容和去耦电容有什么区别？](https://mp.weixin.qq.com/s/dNTULzZ8kDyBgv3e7Tl67A)
             - [讲得太好了！电容，去耦和退耦的注意事项 - 知乎](https://zhuanlan.zhihu.com/p/578977243)
             - [彻底搞懂：什么是耦合电容？什么是去耦电容？什么是旁路电容？什么是滤波电容？ - 德力威尔王术平 - 博客园](https://www.cnblogs.com/deliweier-wangshuping/p/16127284.html)
-  
+      - AC/DC Adapters
+
 ### MathML
 - [Pell's equation (BigInt and MathML demo)](https://people.igalia.com/fwang/pell-bigint-mathml/)
