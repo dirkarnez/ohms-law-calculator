@@ -21,6 +21,11 @@
     - [Online Graph Maker · Plotly Chart Studio](https://chart-studio.plotly.com/create/#/)
 - Earthing
  - Current divider
+- pin-protection resistor
+    - [Detect a Knock | Arduino Documentation](https://docs.arduino.cc/built-in-examples/sensors/Knock/)
+        - [adc pin](./images/adc.jpg)
+        - Consider Piezo internal impedance, pin input impedance, mcu adc circuitry impedance
+        - `(20 / ((100*(10^6))^-1 + (1*(10^6))^-1)^-1) * 1000`
 - LED
     - ```
         LG L29K-G2J1-24-Z	Osram	Standard LEDs - SMD Green, 570nm 12mcd, 2mA
