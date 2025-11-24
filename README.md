@@ -3,6 +3,7 @@
 ### TODOs
 - Transformer
     - [Transformers Physics Problems - Voltage, Current & Power Calculations - Electromagnetic Induction - YouTube](https://www.youtube.com/watch?v=GJm-FOMeG4E)
+    - [Power factor explained | Active Reactive Apparent Power correction - YouTube](https://www.youtube.com/watch?v=r97cKTLoS74)
     - There should be a case where output impedance (Series + parallel) is considered, so that we can get the output current of the transformer
         - [Output impedance - Wikipedia](https://en.wikipedia.org/wiki/Output_impedance)
 - Maximum Power Transfer Theorem
@@ -21,6 +22,7 @@
     - [Online Graph Maker · Plotly Chart Studio](https://chart-studio.plotly.com/create/#/)
 - Earthing
  - Current divider
+ - [破除迷思！綁鋼筋接地真的有效嗎？6種常見方式誰才是無效接地｜DIY實測｜【宅水電】 - YouTube](https://www.youtube.com/watch?v=ItBXflzaNhg)
 - pin-protection resistor
     - [Detect a Knock | Arduino Documentation](https://docs.arduino.cc/built-in-examples/sensors/Knock/)
         - [adc pin](./images/adc.jpg)
@@ -33,6 +35,14 @@
         LB Q39G-L2N2-35-1	Osram	Standard LEDs - SMD Blue, 470nm 45mcd, 5mA
         LS L29K-G1H2-1-Z	Osram	Standard LEDs - SMD Super Red, 630nm 13mcd, 2mA
       ```
+- harmonics
+    - [Understanding Harmonics in Electrical Systems - YouTube](https://www.youtube.com/shorts/rS-sWo-7c24)
+    - [How Do Electrical Harmonics Work? - YouTube](https://www.youtube.com/watch?v=6HHeHTM5zYo)
+    - [Harmonics Explained: Audio & Radio Electronics - YouTube](https://www.youtube.com/watch?v=q4YfZerIzAo)
+    - [What are the harmonics in Power system? Type, Cause and Effect of Harmonics #electrology explained - YouTube](https://www.youtube.com/watch?v=PRNai_hTxyE)
+    - [How Do Electrical Ha[33 - How do harmonics relate to power factor and displacement power factor? - YouTube](https://www.youtube.com/watch?v=oV8XpcS_lsc)
+rmonics Work? - YouTube](https://www.youtube.com/watch?v=6HHeHTM5zYo)
+
 - Power
     - power = 1 J/s
     - volt = joules per coulomb
@@ -45,6 +55,7 @@
     - Switch-mode
 - transmission
     - [輸電網路 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/%E8%BC%B8%E9%9B%BB%E7%B6%B2%E8%B7%AF)
+    - [The Most Confusing Part of the Power Grid - YouTube](https://www.youtube.com/watch?v=ZwkNTwWJP5k)
 - Power consumption
     - [空调开一晚到底需要多少钱？#冷知识 #涨知识 - YouTube](https://www.youtube.com/watch?v=CWR74hei4W8)
     - [機電工程署 - 電力教室](https://eld.emsd.gov.hk/eic/tc/electricity-classroom/classroom08.html)
