@@ -76,5 +76,12 @@ rmonics Work? - YouTube](https://www.youtube.com/watch?v=6HHeHTM5zYo)
             - [彻底搞懂：什么是耦合电容？什么是去耦电容？什么是旁路电容？什么是滤波电容？ - 德力威尔王术平 - 博客园](https://www.cnblogs.com/deliweier-wangshuping/p/16127284.html)
       - AC/DC Adapters
 
+### Symbolic
+```python
+from sympy import symbols, solve, solveset
+from sympy.abc import x, y, z
+v, i, r = symbols('V I R')
+solve(v - (i * r), i, dict=True)
+```
 ### MathML
 - [Pell's equation (BigInt and MathML demo)](https://people.igalia.com/fwang/pell-bigint-mathml/)
